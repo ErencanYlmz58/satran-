@@ -1,10 +1,4 @@
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
 // Firebase configuration
-// You'll need to replace these values with your own Firebase project details
 const firebaseConfig = {
     apiKey: "AIzaSyDLf5ts5mGdUMXDoSeToV-In_3sFQVyeik",
     authDomain: "schaakspel-2bfa9.firebaseapp.com",
@@ -14,12 +8,10 @@ const firebaseConfig = {
     messagingSenderId: "1062722394805",
     appId: "1:1062722394805:web:d7f0543967bff5f7827cfc",
     measurementId: "G-7PD5Z9X6BB"
-  };
-
+};
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
 
 // Chess piece representation and mapping
 const PIECES = {
