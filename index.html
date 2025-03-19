@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Chess</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-hearts"></div>
+
+    <div class="container">
+        <h1 class="title">Romantic Chess <i class="fas fa-heart"></i></h1>
+        
+        <div id="startScreen" class="screen">
+            <div class="start-content">
+                <h2>Welcome to Romantic Chess</h2>
+                <p>Play a game of chess with your loved one, no matter the distance between you.</p>
+                
+                <div class="form-group">
+                    <label for="gameId">Game Room ID:</label>
+                    <input type="text" id="gameId" placeholder="Create or join a room">
+                    <p class="hint">Share this ID with your partner to play together</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Choose your role:</label>
+                    <div class="player-selection">
+                        <button id="player1" class="player-btn active">Player 1 (Light)</button>
+                        <button id="player2" class="player-btn">Player 2 (Dark)</button>
+                    </div>
+                </div>
+                
+                <button id="startGameBtn" class="btn-primary">Enter Love's Battlefield</button>
+            </div>
+        </div>
+        
+        <div id="gameScreen" class="screen hidden">
+            <div class="game-container">
+                <div class="game-info">
+                    <div class="game-status">
+                        <div id="gameStatusMessage" class="status-message">Waiting for your beloved to join...</div>
+                        <div id="turnIndicator" class="turn-indicator">Light's turn</div>
+                    </div>
+                    <div class="game-actions">
+                        <button id="newGameBtn" class="btn-secondary"><i class="fas fa-sync-alt"></i> New Game</button>
+                        <button id="exitGameBtn" class="btn-secondary"><i class="fas fa-sign-out-alt"></i> Exit</button>
+                    </div>
+                </div>
+                
+                <div class="board-and-captures">
+                    <div class="captures dark-captures">
+                        <h3>Dark's Captured Hearts</h3>
+                        <div id="darkCaptures" class="captured-pieces"></div>
+                    </div>
+                    
+                    <div id="chessboard" class="chessboard"></div>
+                    
+                    <div class="captures light-captures">
+                        <h3>Light's Captured Hearts</h3>
+                        <div id="lightCaptures" class="captured-pieces"></div>
+                    </div>
+                </div>
+                
+                <div class="romantic-message-container">
+                    <div id="romanticMessage" class="romantic-message">
+                        <p>Let your hearts play the ancient game of love...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <!-- Game Scripts -->
+    <script src="config.js"></script>
+    <script src="chess.js"></script>
+    <script src="ui.js"></script>
+    <script src="firebase-manager.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
